@@ -1,0 +1,24 @@
+include "std/std.porth"
+include "../forth.porth"
+
+inline proc putb bool in cast(int) putu end
+
+proc main in
+    "-5 0< = " puts -5 0< putb cr // Must be 1
+    "7 0< = " puts 7 0< putb cr // Must be 0
+
+    "8 0!= = " puts 8 0!= putb cr // Must be 1
+    "0 0!= = " puts 0 0!= putb cr // Must be 0
+
+    "8 0= = " puts 8 0= putb cr // Must be 0
+    "0 0= = " puts 0 0= putb cr // Must be 1
+
+    "-5 0> = " puts -5 0> putb cr // Must be 0
+    "7 0> = " puts 7 0> putb cr // Must be 1
+
+    "5 1+ = " puts 5 1+ putu cr // Must be 6
+    "5 1- = " puts 5 1- putu cr // Must be 4
+
+    "6 2* = " puts 6 2* putu cr // Must be 12
+    "6 2/ = " puts 6 2/ putu cr // Must be 3
+end

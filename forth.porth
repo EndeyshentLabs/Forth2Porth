@@ -1,0 +1,41 @@
+include "std/std.porth"
+
+inline proc 0< int -- bool in // 6.1.0250 zero-less
+    0 < if
+        true
+    else
+        false
+    end
+end
+
+inline proc 0!= int -- bool in // 6.1.0260 zero-not-equals
+    cast(bool) if
+        true
+    else
+        false
+    end
+end
+
+inline proc 0= int -- bool in // 6.1.0270 zero-equals
+    cast(bool) if
+        false
+    else
+        true
+    end
+end
+
+inline proc 0> int -- bool in // 6.2.0280 zero-greater
+    0 > if
+        true
+    else
+        false
+    end
+end
+
+inline proc 1+ int -- int in 1 + end // 6.1.0290 one-plus
+inline proc 1- int -- int in 1 - end // 6.1.0300 one-minus
+
+inline proc 2* int -- int in 2 * end // 6.1.0320 two-star
+inline proc 2/ int -- int in 2 / end // 6.1.0330 two-slash
+
+inline proc cr in '\n' putch end // 6.1.0990 c-r
